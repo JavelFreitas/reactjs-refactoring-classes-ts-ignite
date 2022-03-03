@@ -10,15 +10,14 @@ import { useField } from '@unform/core';
 import { Container } from './styles';
 import { IconBaseProps } from 'react-icons';
 
-interface IInputComponent {
+interface IInput {
   name: string
-  icon: React.ComponentType<IconBaseProps>
-  rest: { [x: string]: string }
+  placeholder: string
+  icon?: React.ComponentType<IconBaseProps>
+  rest?: {[x: string]: string}
 }
 
-
-
-const Input = ({ name, icon: Icon, ...rest }: IInputComponent) => {
+const Input = ({ name, icon: Icon, ...rest }: IInput) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);

@@ -1,4 +1,4 @@
-import { ReactHTMLElement, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 
 interface IModal{
@@ -13,7 +13,7 @@ const Modal = (props: IModal) => {
 
   useEffect(() => {
     setModalStatus(isOpen)
-  }, [props]);
+  }, [isOpen, props]);
 
     return (
       <ReactModal
