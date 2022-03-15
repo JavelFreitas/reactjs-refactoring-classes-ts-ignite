@@ -5,16 +5,18 @@ import { Container } from './styles';
 import api from '../../services/api';
 
 export interface IFood {
-  food: {
-    id: number;
-    name: string;
-    description: string;
-    price: string;
-    available: boolean;
-    image: string;
-  }
+  food: IInnerFood
   handleEditFood: any
   handleDelete: any
+}
+
+export interface IInnerFood {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  available: boolean;
+  image: string;
 }
 
 function Food(props: IFood) {

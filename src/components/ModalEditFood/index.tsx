@@ -4,13 +4,13 @@ import { FiCheckSquare } from 'react-icons/fi';
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
-import { IFood } from '../Food';
+import { IFood, IInnerFood } from '../Food';
 
 interface IModalEditFood{
   setIsOpen: () => void,
   isOpen: boolean,
   handleUpdateFood: (data: IFood) => void,
-  editingFood: (food: IFood) => void
+  editingFood: IInnerFood
 }
 
 const ModalEditFood = (props: IModalEditFood) => {
