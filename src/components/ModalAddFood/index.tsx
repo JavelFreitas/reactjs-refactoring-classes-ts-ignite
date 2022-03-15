@@ -27,7 +27,7 @@ const ModalAddFood = (props: IModalAddFood) => {
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>        
-      <Form ref={createRef()} onSubmit={handleSubmit}>
+      <Form ref={ createRef() } onSubmit={ handleSubmit }>
         <h1>Novo Prato</h1>
         <Input name="image" placeholder="Cole o link aqui" />
 
