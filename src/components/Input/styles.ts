@@ -5,7 +5,7 @@ interface IInputContainerProps{
   isFilled: boolean
 }
 
-export const Container = styled.div<IInputContainerProps>`
+const Container = styled.div<IInputContainerProps>`
   display: flex;
   align-items: center;
 
@@ -26,16 +26,14 @@ export const Container = styled.div<IInputContainerProps>`
     line-height: 36px;
   }
 
-  ${props =>
-    props.isFocused &&
-    css`
+  ${(props) => props.isFocused
+    && css`
       color: #ff9000;
       border-color: #ff9000;
     `}
 
-  ${props =>
-    props.isFilled &&
-    css`
+  ${(props) => props.isFilled
+    && css`
       color: #ff9000;
     `}
 
@@ -54,3 +52,7 @@ export const Container = styled.div<IInputContainerProps>`
     margin-right: 16px;
   }
 `;
+
+export default {
+  Container,
+};

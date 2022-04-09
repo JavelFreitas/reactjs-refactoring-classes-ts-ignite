@@ -1,7 +1,7 @@
-import {createRef} from 'react';
+import { createRef } from 'react';
 import { FiCheckSquare } from 'react-icons/fi';
 
-import { Form } from './styles';
+import styles from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 import { IInnerFood } from '../Food';
@@ -9,13 +9,11 @@ import { IInnerFood } from '../Food';
 interface IModalAddFood{
   isOpen: boolean
   setIsOpen: () => void
-  children?: JSX.Element
   handleAddFood: (data: IInnerFood) => void
 }
 
-const ModalAddFood = (props: IModalAddFood) => {
+function ModalAddFood(props: IModalAddFood): JSX.Element {
   const { isOpen, setIsOpen } = props;
-  
 
   const handleSubmit = async (data: IInnerFood) => {
     const { handleAddFood } = props;
@@ -24,10 +22,9 @@ const ModalAddFood = (props: IModalAddFood) => {
     setIsOpen();
   };
 
-
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>        
-      <Form ref={ createRef() } onSubmit={ handleSubmit }>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+      <styles.Form ref={createRef()} onSubmit={handleSubmit}>
         <h1>Novo Prato</h1>
         <Input name="image" placeholder="Cole o link aqui" />
 
@@ -41,9 +38,9 @@ const ModalAddFood = (props: IModalAddFood) => {
             <FiCheckSquare size={24} />
           </div>
         </button>
-      </Form>
+      </styles.Form>
     </Modal>
   );
-};
+}
 
 export default ModalAddFood;
