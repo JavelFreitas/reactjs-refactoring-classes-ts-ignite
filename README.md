@@ -132,12 +132,12 @@ npm init @eslint/config
 <h3>Verificando erros com Eslint</h3>
 
 ```
-npx eslint src/**
+npm run lint
 ```
 <h3>Ajeitando o que da pra ajeitar</h3>
 
 ```
-npx eslint src/** --fix
+npm run lint-fix
 ```
 <h3>Caso dê problema com Typescript</h3>
 - Adicionar no extends do eslintrc.json os pacotes abaixo
