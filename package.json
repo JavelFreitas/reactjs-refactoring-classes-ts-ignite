@@ -50,6 +50,8 @@
     "@types/react-modal": "^3.13.1",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.22",
-    "json-server": "^0.16.3"
+    "eslint": "^7.32.0",
+    "json-server": "^0.16.3",
+    "prettier": "2.6.2"
   }
 }
