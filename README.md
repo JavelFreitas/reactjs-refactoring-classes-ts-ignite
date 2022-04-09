@@ -15,6 +15,7 @@
 * [Tecnologias](#tecnologias)
 * [Novidades](#novidade)
 * [Créditos](#creditos)
+* [(Bonus) Configuração do Eslint](#eslint)
 
 <h2 id="pre-requisitos">Pre-requisitos</h2>
 
@@ -97,3 +98,72 @@ yarn test
 
 * [Projeto Original](https://github.com/rocketseat-education/ignite-template-reactjs-refactoring-classes-ts) (Template)
 * [Ignite](https://rocketseat.com.br/ignite)
+* [Config do Eslint](https://blog.logrocket.com/using-prettier-eslint-automate-formatting-fixing-javascript/)
+
+<h2 id="eslint">(Bonus) Configuração do Eslint</h2>
+
+---
+<h3>Essa configuração não faz parte do desafio do Ignite, e gostaria de ressaltar que:</h3>
+
+1. Algumas verificações do ESlint disparam erro, fazendo que o projeto do create-react-app pare de funcionar, depois de instalar é só ajeitar o que ele pede e o projeto volta a rodar
+2. No futuro, algum desses passos ou customizações podem estar ultrapassadas, sintam-se a vontade para fazer um merge request com alguma atualização e ajudar esse projeto a crescer.
+
+---
+<h3>Instalar o eslint como dependencia de desenvolvimento</h3>
+
+```
+npm install --save-dev eslint
+```
+
+<!---
+<h3>Instalar o prettier como dependência de desenvolvimento (Futuramente farei a integração dos dois)</h3>
+
+```
+npm install --save-dev --save-exact prettier
+```
+-->
+<h3>Criando o arquivo de configuração do Eslint</h3>
+
+```
+npm init @eslint/config
+```
+<h3><strong>Escolhi style guide do airbnb</strong></h3>
+
+<h3>Verificando erros com Eslint</h3>
+
+```
+npx eslint src/**
+```
+<h3>Ajeitando o que da pra ajeitar</h3>
+
+```
+npx eslint src/** --fix
+```
+<h3>Caso dê problema com Typescript</h3>
+- Adicionar no extends do eslintrc.json os pacotes abaixo
+
+```
+npm install --save-dev --save-exact @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+<h2>Coisas que modifiquei</h2>
+
+<h3>Adicionei as regras:<h3>
+
+>"react/react-in-jsx-scope": "off",
+>Pois desde a versão 17 do react não é necessário importar React em todo arquivo de componente.
+
+>"import/extensions": [ "error", "never" ] - pois ao usar extensão no final de um import surgia o erro ts(2691)
+
+>"settings": { "import/resolver": { "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] } } } - pois "Unable to resolve path to module" aparecia
+
+> "no-use-before-define": "off" pois estava alertando em um import de React na primeira linha, pelo visto é um problema do eslint, relato [aqui](https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916)
+
+>"react/jsx-props-no-spreading": "off" - gosto do spreading operator
+
+>"react/require-default-props" resolvido no arquivo Index.tsx, linha 60
+
+>"import/prefer-default-export" a resolução pra esse pode ser encontrada em styles.ts e index.tsx do Dashboard
+
+>JSX: true em globals, dentro de eslintrc.json para aceitar JSX
+
