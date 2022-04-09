@@ -4,7 +4,7 @@ interface IFoodContainerProps{
   available: boolean
 }
 
-export const Container = styled.div<IFoodContainerProps>`
+const Container = styled.div<IFoodContainerProps>`
   background: #f0f0f5;
   border-radius: 8px;
 
@@ -16,9 +16,8 @@ export const Container = styled.div<IFoodContainerProps>`
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
-    !props.available &&
-    css`
+    ${(props) => !props.available
+    && css`
         opacity: 0.3;
       `};
 
@@ -147,3 +146,7 @@ export const Container = styled.div<IFoodContainerProps>`
     }
   }
 `;
+
+export default {
+  Container,
+};
