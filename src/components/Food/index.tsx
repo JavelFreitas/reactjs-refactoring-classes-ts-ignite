@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
-import { Container } from './styles';
+import styles from './styles';
 import api from '../../services/api';
 
 export interface IFood {
   food: IInnerFood
-  handleEditFood: any
-  handleDelete: any
+  handleEditFood(food: IInnerFood): void
+  handleDelete(id: number): void
 }
 
 export interface IInnerFood {
@@ -19,27 +19,26 @@ export interface IInnerFood {
   image: string;
 }
 
-function Food(props: IFood) {
-  const { food, handleDelete, handleEditFood} = props;
-  const { available } = props.food;
+function Food(props: IFood): JSX.Element {
+  const { food, handleDelete, handleEditFood } = props;
+  const { available } = food;
   const [isAvailable, setIsAvailable] = useState(available);
 
   const toggleAvailable = async () => {
-
     await api.put(`/foods/${food.id}`, {
       ...food,
       available: !isAvailable,
     });
 
     setIsAvailable(!isAvailable);
-  }
+  };
 
   const setEditingFood = () => {
     handleEditFood(food);
-  }
-  
+  };
+
   return (
-    <Container available={isAvailable}>
+    <styles.Container available={isAvailable}>
       <header>
         <img src={food.image} alt={food.name} />
       </header>
@@ -47,7 +46,9 @@ function Food(props: IFood) {
         <h2>{food.name}</h2>
         <p>{food.description}</p>
         <p className="price">
-          R$ <b>{food.price}</b>
+          R$
+          {' '}
+          <b>{food.price}</b>
         </p>
       </section>
       <section className="footer">
@@ -86,7 +87,7 @@ function Food(props: IFood) {
           </label>
         </div>
       </section>
-    </Container>
+    </styles.Container>
   );
 }
 
