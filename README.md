@@ -1,9 +1,9 @@
 
 <h1 align="center">GoRestaurant</h1>
-<p align="center">Projeto de refatoração</p>
-<!-- <h1 align="center">
-  <img alt="Tela inicial da aplicação to.do" title="#to-do" src="https://github.com/JavelFreitas/Desafio-01-Ignite-React/blob/main/assets/TelaInicial.PNG" />
-</h1> -->
+<p align="center">Projeto de refatoração JS -> TS</p>
+<h1 align="center">
+<img alt="Tela inicial da aplicação GoRestaurant" title="#GoRestaurant" src="https://github.com/JavelFreitas/reactjs-refactoring-classes-ts-ignite/blob/master/docs/assets/GoRestaurant.PNG" />
+</h1>
 <img src="https://img.shields.io/apm/l/vim-mode"/>
 <img src="https://img.shields.io/npm/types/typescript?color=blue&label=language"/>
 <hr>
