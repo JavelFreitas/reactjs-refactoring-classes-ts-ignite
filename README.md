@@ -150,20 +150,27 @@ npm install --save-dev --save-exact @typescript-eslint/eslint-plugin @typescript
 
 <h3>Adicionei as regras:<h3>
 
->"react/react-in-jsx-scope": "off",
->Pois desde a versão 17 do react não é necessário importar React em todo arquivo de componente.
+>"react/react-in-jsx-scope": "off"
+>>Pois desde a versão 17 do react não é necessário importar React em todo arquivo de componente.
 
->"import/extensions": [ "error", "never" ] - pois ao usar extensão no final de um import surgia o erro ts(2691)
+>"import/extensions": [ "error", "never" ]
+>>Pois ao usar extensão no final de um import surgia o erro ts(2691)
 
->"settings": { "import/resolver": { "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] } } } - pois "Unable to resolve path to module" aparecia
+>"settings": { "import/resolver": { "node": { "extensions": [".js", ".jsx", ".ts", ".tsx"] } } }
+>>Pois "Unable to resolve path to module" aparecia
 
-> "no-use-before-define": "off" pois estava alertando em um import de React na primeira linha, pelo visto é um problema do eslint, relato [aqui](https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916)
+> "no-use-before-define": "off"
+>>Pois estava alertando em um import de React na primeira linha, pelo visto é um problema do eslint, relato [aqui](https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916)
 
->"react/jsx-props-no-spreading": "off" - gosto do spreading operator
+>"react/jsx-props-no-spreading": "off"
+>>Gosto do Spread Operator
 
->"react/require-default-props" resolvido no arquivo Index.tsx, linha 60
+>"react/require-default-props" 
+>>Resolvido no arquivo Index.tsx, linha 60
 
->"import/prefer-default-export" a resolução pra esse pode ser encontrada em styles.ts e index.tsx do Dashboard
+>"import/prefer-default-export" 
+>>Resolvido em styles.ts e index.tsx do Dashboard
 
->JSX: true em globals, dentro de eslintrc.json para aceitar JSX
+>JSX: true em globals, dentro de eslintrc.json 
+>>Para aceitar JSX
 
