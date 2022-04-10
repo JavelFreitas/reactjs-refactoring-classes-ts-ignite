@@ -93,6 +93,9 @@ yarn test
 <h2 id="novidade">Novidade</h2>
 
 * Componente de modal (react-modal)
+* Config do Eslint
+* Uso de Conventional Commits
+* Aprendizado de GitFlow
 
 <h2 id="creditos">Créditos</h2>
 
