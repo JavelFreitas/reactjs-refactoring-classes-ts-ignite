@@ -50,6 +50,14 @@ Rodar
 </h3>
 
 <h4>
+Antes de rodar
+</h4>
+
+```
+yarn lint-fix
+```
+
+<h4>
 Terminal 1
 </h4>
 
@@ -130,7 +138,9 @@ npm install --save-dev --save-exact prettier
 ```
 npm init @eslint/config
 ```
-<h3><strong>Escolhi style guide do airbnb</strong></h3>
+- <h3>Escolhi style guide do airbnb</h3>
+
+- ### [Como o arquivo ficou no final](https://github.com/JavelFreitas/reactjs-refactoring-classes-ts-ignite/blob/master/.eslintrc.json)
 
 <h3>Verificando erros com Eslint</h3>
 
